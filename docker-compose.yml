@@ -1,0 +1,13 @@
+version: "1.0"
+
+services:      
+  using-env-variables:
+    image: snooapi:1.0
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5001:80
+    environment: 
+      - SnooClientOptions__Username=%USERNAME%
+      - SnooClientOptions__Password=%PASSWORD%
